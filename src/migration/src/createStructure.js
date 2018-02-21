@@ -1,4 +1,4 @@
-const camelCase = require('camelcase')
+const humps = require('humps')
 module.exports = function (tableData,tableName,db) {
   let model = {
     attributes: {},
@@ -16,7 +16,7 @@ module.exports = function (tableData,tableName,db) {
   //   let autoIncrement = _definedAutoIncrement(element.Extra)
     let field = element.Field
     let defaultsTo = element.Default ? element.Default : undefined
-    model.attributes[camelCase(element.Field)] = {
+    model.attributes[humps.camelize(element.Field)] = {
       type: type,
       allowNull: allowNull,
       defaultsTo: defaultsTo,
