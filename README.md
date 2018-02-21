@@ -81,6 +81,8 @@ But you need to config db connection and which table you need to generate model 
 ----------------------------------------
 ## Test
 
+We setup unit test with Jest and the example is in '/test/unit' you can structure your test like you want then run..
+
 ``` bash
 # run unit test
 npm run test
