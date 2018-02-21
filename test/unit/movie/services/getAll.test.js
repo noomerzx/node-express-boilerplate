@@ -1,9 +1,6 @@
 const { getAll } = require('../../../../src/services/movie')
 const model = require('../../../../src/repositories')
 
-// payload
-const GetAllBillPayload = require('../data/GetAllBillPayload.js')
-
 /* global jest, describe, test, expect */
 describe('How to get movie list', () => {
   test('CASE-01 : [Success] Get bill without sort and order', async () => {
