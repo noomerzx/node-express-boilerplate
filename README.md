@@ -2,8 +2,8 @@
 A boilterplate for node.js + express.js with all necessary module
 <br>
 > There is a lot of node.js web framework but can't denie that express is the most popular and have an active community.
-> But the problem of express is.. that you need to install what ever you need by yourself some said this is good, but some said it's bad for beginner
-> because you may don't know which module can get your work done ! and that why I've created this boilerplate with all neccessary module to complete web work flow.
+> But the problem of express is.. that you need to install whatever necessary by yourself. Some said this is good, but some said it's bad for beginner
+> because you may don't know which module can get your work done ! and that why I've created this boilerplate.
 
 ----------------------------------------
 ## Dependencies
