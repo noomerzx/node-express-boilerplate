@@ -1,4 +1,4 @@
-let mysql = require('mysql')
+let mysql = require('mysql2')
 
 class DbConnector {
   constructor (host, userName, password, database) {

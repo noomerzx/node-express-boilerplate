@@ -16,11 +16,13 @@ A boilterplate for node.js + express.js with all necessary module
 * Jsonwebtoken : For JWT management
 * Humps : For transformation object between any cases (snake to camale or anythings)
 * Sqlstring : For protect injection string (manual)
+* Mysql2 : For migration scripts and sequelize
 
 ## Dev Dependencies
-* Mysql/Mysql2 : For migration scripts
 * Replace-In-File : For migration scripts
 * Jest : For Unit Test
+* Npm-Check : For interactive update module
+
 ----------------------------------------
 ## Project Structure
 * <b>src/config</b>: contains route and database config

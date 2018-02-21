@@ -16,11 +16,9 @@
     "sqlstring": "^2.3.0"
   },
   "devDependencies": {
-    "camelcase": "^4.1.0",
     "coveralls": "^3.0.0",
     "jest": "^22.3.0",
     "js-beautify": "^1.7.5",
-    "mysql": "^2.15.0",
     "npm-check": "^5.5.2",
     "replace-in-file": "^3.1.0"
   },
