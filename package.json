@@ -1,0 +1,46 @@
+{
+  "name": "product-service-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "humps": "^2.0.1",
+    "jsonwebtoken": "^8.1.0",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.28.6",
+    "sqlstring": "^2.3.0"
+  },
+  "devDependencies": {
+    "camelcase": "^4.1.0",
+    "coveralls": "^3.0.0",
+    "jest": "^22.3.0",
+    "js-beautify": "^1.7.5",
+    "mysql": "^2.15.0",
+    "npm-check": "^5.5.2",
+    "replace-in-file": "^3.1.0"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "test-coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "migration": "node ./src/migration",
+    "serve": "export NODE_ENV=local && node ."
+  },
+  "jest": {
+    "verbose": true,
+    "testMatch": [
+      "**/unit/**/**/*.test.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jitinics@bitbucket.org/flyingcomma/sms-product-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/flyingcomma/sms-product-service#readme"
+}

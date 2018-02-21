@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+	"windows": {
+		"command": "eslint"
+	},
+	"linux": {
+		"command": "eslint"
+	},
+	"osx": {
+		"command": "eslint"
+	},
+	"isShellCommand": true,
+	"args": ["-c ./.eslintrc.json *.js"],
+	"showOutput": "silent",
+  "problemMatcher": "$eslint-stylish"
+}
