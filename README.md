@@ -46,7 +46,7 @@ npm run serve
 
 ```
 
-As you know expree.js design that everythings is middlewares, So if you need to add or remove some module you can do it by yourself in index.js
+As you know express.js design concept is everythings are middlewares, So if you need to add or remove some module you can do it by yourself in index.js
 
 ----------------------------------------
 ## Migration
