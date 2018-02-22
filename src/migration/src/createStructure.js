@@ -11,16 +11,24 @@ module.exports = function (tableData,tableName,db) {
     }
   }
   tableData.forEach(element => {
+    let primaryKey = _definedPrimaryKey(element.Key)
     let type = _definedType(element.Type)
     let allowNull = _definedAllowNull(element.Null)
-  //   let autoIncrement = _definedAutoIncrement(element.Extra)
+    let autoIncrement = _definedAutoIncrement(element.Extra)
     let field = element.Field
+    let fieldCamel = humps.camelize(element.Field)
     let defaultsTo = element.Default ? element.Default : undefined
-    model.attributes[humps.camelize(element.Field)] = {
+    model.attributes[fieldCamel] = {
       type: type,
       allowNull: allowNull,
       defaultsTo: defaultsTo,
-      field: field
+      field: field,
+      primaryKey: primaryKey,
+      autoIncrement: autoIncrement
+    }
+    if (fieldCamel === 'createTime' || fieldCamel === 'updateTime') {
+      model.tableDetail[fieldCamel === 'createTime' ? 'createdAt' : 'updatedAt'] = fieldCamel
+      model.tableDetail.timestamps = true
     }
   })
   return model
@@ -92,6 +100,14 @@ function _definedAllowNull (Null) {
 
 function _definedAutoIncrement (extra) {
   if (extra === 'auto_increment') {
+    return true
+  } else {
+    return false
+  }
+}
+
+function _definedPrimaryKey(key) {
+  if (key === 'PRI') {
     return true
   } else {
     return false
