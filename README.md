@@ -40,7 +40,7 @@ A boilterplate for node.js + express.js with all necessary module
 ----------------------------------------
 ## Run Server
 
-We already inject all dependencies in 'index.js', So you can start the server in one command.
+We already inject all dependencies in 'index.js', So you can start the server immediately (npm install required)
 
 ``` bash
 # start the server
@@ -53,7 +53,7 @@ As you know express.js design concept is everythings are middlewares, So if you 
 ----------------------------------------
 ## Migration
 
-You can generate database table to sequelize model in just one command.
+You can generate sequelize model from mysql schema in just one command.
 
 ``` bash
 # migrate db to model
@@ -61,7 +61,7 @@ npm run migration
 
 ```
 
-But you need to config db connection and which table you need to generate model in 'src/migration/config.js' first, See the example below.
+But you need to config db connection and which table you need to picked in 'src/migration/config.js' first, See the example below.
 
 ```javascript
 {
@@ -81,7 +81,7 @@ But you need to config db connection and which table you need to generate model 
 ----------------------------------------
 ## Test
 
-We setup unit test with Jest and the example is in '/test/unit' you can structure your test like you want then run..
+We setup unit test with Jest and the example is in '/test/unit' you can structure your test like you desire then..
 
 ``` bash
 # run unit test
