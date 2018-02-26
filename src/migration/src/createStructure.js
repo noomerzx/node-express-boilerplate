@@ -95,7 +95,7 @@ function _definedType (type) {
 function _definedDefault (type) {
   if (!type) {
     return undefined
-  } else if (type === 'CURRENT_TIMESTAMP') {
+  } else if (type === 'CURRENT_TIMESTAMP' || type === '0000-00-00 00:00:00') {
     return '$Sequelize.DATE$'
   } else if (isNaN(parseInt(type))) {
     return type
