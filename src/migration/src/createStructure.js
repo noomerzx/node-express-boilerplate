@@ -28,8 +28,18 @@ module.exports = function (tableData, tableName, db) {
       autoIncrement: autoIncrement
     }
     if (fieldCamel === 'createTime' || fieldCamel === 'updateTime') {
-      model.tableDetail[fieldCamel === 'createTime' ? 'createdAt' : 'updatedAt'] = fieldCamel
-      model.tableDetail.timestamps = true
+      if (model.tableDetail.timestamps) {
+        model.tableDetail[fieldCamel === 'createTime' ? 'createdAt' : 'updatedAt'] = fieldCamel
+      } else {
+        if (fieldCamel === 'createTime') {
+          model.tableDetail['createdAt'] = fieldCamel
+          model.tableDetail['updatedAt'] = false
+        } else if (fieldCamel === 'createTime') { 
+          model.tableDetail['createdAt'] = false
+          model.tableDetail['updatedAt'] = fieldCamel
+        }
+        model.tableDetail.timestamps = true
+      }
     }
   })
   return model
@@ -81,6 +91,11 @@ function _definedType (type) {
     }
     return '$Sequelize.INTEGER$'
   } else if (type.toUpperCase().search('VARCHAR') !== -1) {
+    if (volumn && volumn[0]) {
+      return `$Sequelize.STRING(${volumn})$`
+    }
+    return '$Sequelize.STRING$'
+  } else if (type.toUpperCase().search('CHAR') !== -1) {
     if (volumn && volumn[0]) {
       return `$Sequelize.STRING(${volumn})$`
     }
